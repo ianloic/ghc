@@ -281,6 +281,9 @@ AC_DEFUN([FPTOOLS_SET_HASKELL_PLATFORM_VARS],
         gnu)
             test -z "[$]2" || eval "[$]2=OSHurd"
             ;;
+        fuchsia)
+            test -z "[$]2" || eval "[$]2=OSFuchsia"
+            ;;
         *)
             echo "Unknown OS '[$]1'"
             exit 1
@@ -1625,7 +1628,7 @@ then
   then
     # We can't test timer_create when we're cross-compiling, so we
     # optimistiaclly assume that it actually works properly.
-    AC_DEFINE([USE_TIMER_CREATE], 1,  [Define to 1 if we can use timer_create(CLOCK_REALTIME,...)])
+    AC_DEFINE([USE_TIMER_CREATE], 0,  [Define to 1 if we can use timer_create(CLOCK_REALTIME,...)])
   else
   AC_CACHE_CHECK([for a working timer_create(CLOCK_REALTIME)],
     [fptools_cv_timer_create_works],
@@ -2008,6 +2011,9 @@ AC_DEFUN([GHC_CONVERT_OS],[
         ;;
       nto-qnx*)
         $3="nto-qnx"
+        ;;
+      fuchsia)
+        $3="fuchsia"
         ;;
       *)
         echo "Unknown OS $1"

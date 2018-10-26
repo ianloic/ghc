@@ -88,6 +88,7 @@ data OS
         | OSQNXNTO
         | OSAIX
         | OSHurd
+        | OSFuchsia
         deriving (Read, Show, Eq)
 
 -- | ARM Instruction Set Architecture, Extensions and ABI
@@ -138,6 +139,7 @@ osElfTarget OSHaiku     = True
 osElfTarget OSQNXNTO    = False
 osElfTarget OSAIX       = False
 osElfTarget OSHurd      = True
+osElfTarget OSFuchsia   = True
 osElfTarget OSUnknown   = False
  -- Defaulting to False is safe; it means don't rely on any
  -- ELF-specific functionality.  It is important to have a default for

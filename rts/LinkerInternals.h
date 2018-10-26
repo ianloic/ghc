@@ -329,7 +329,8 @@ char *cstring_from_section_name(
 || defined(linux_android_HOST_OS) \
 || defined(freebsd_HOST_OS) || defined(kfreebsdgnu_HOST_OS) \
 || defined(dragonfly_HOST_OS) || defined(netbsd_HOST_OS) \
-|| defined(openbsd_HOST_OS) || defined(gnu_HOST_OS)
+|| defined(openbsd_HOST_OS) || defined(gnu_HOST_OS) \
+|| defined(fuchsia_HOST_OS)
 #  define OBJFORMAT_ELF
 #  include "linker/ElfTypes.h"
 #elif defined (mingw32_HOST_OS)
